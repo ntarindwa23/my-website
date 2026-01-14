@@ -77,7 +77,8 @@ main {
 
 /* SECTIONS */
 section {
-  background: #fff;
+  background:  #13293d;
+  color: #e6edf3;
   padding: 24px;
   border-radius: 12px;
   margin-bottom: 24px;
@@ -123,6 +124,7 @@ footer {
     padding: 18px;
   }
 }
+
 
 
 
