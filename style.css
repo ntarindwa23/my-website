@@ -12,6 +12,17 @@ body {
   color: #e6edf3;      /* light text */
   line-height: 1.6;
 }
+/* LINKS */
+a {
+  color: #4da3ff;        /* clean blue */
+  font-weight: 600;      /* thicker text */
+  text-decoration: none; /* remove underline */
+}
+
+a:hover {
+  color: #82c4ff;
+  text-decoration: underline;
+}
 
 /* NAV */
 nav {
@@ -133,6 +144,7 @@ footer {
     padding: 18px;
   }
 }
+
 
 
 
