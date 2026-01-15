@@ -1,42 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>runtrades | Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">RT</div>
+      <div>
+        <div class="brand-title">runtrades</div>
+        <div class="brand-sub">Trading Journal</div>
+      </div>
+    </div>
 
-<header>
-  <img src="images/logo.jpg" alt="My Logo" width="150">
-  <h1>Hello, My name is NTARINDWA</h1>
-  <p>This is a random guy with zero web skills building projects for fun.</p>
-</header>
+    <nav class="topnav">
+      <a class="navlink" href="#">Journal</a>
+      <a class="navlink" href="#">History</a>
+      <a class="navlink active" href="#">Dashboard</a>
+    </nav>
 
-<main>
-  <section id="projects">
-    <h2>My Projects</h2>
-    <p>Personal Portfolio Website</p>
-  </section>
+    <div class="topbar-right">
+      <div class="user">Ntarindwa</div>
+      <button class="btn danger">Logout</button>
+    </div>
+  </header>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:yntarindwa@gmail.com">yntarindwa@gmail.com</a></p>
-  </section>
-</main>
+  <!-- Page -->
+  <main class="page">
+    <section class="hero">
+      <h1>Trading Dashboard</h1>
+      <p>Your trading performance at a glance</p>
+    </section>
 
-<footer>
-  <p>© 2025 NTARINDWA</p>
-</footer>
+    <!-- Stats Grid -->
+    <section class="grid">
+      <div class="card card-wide">
+        <div class="card-head">
+          <div>
+            <div class="label">Net Profit &amp; Loss</div>
+            <div class="big">$554.71</div>
+            <div class="muted">+ 6 trades completed</div>
+          </div>
+          <div class="icon-pill">$</div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini">
+            <div class="mini-label">Win Rate</div>
+            <div class="mini-val">17%</div>
+          </div>
+          <div class="mini">
+            <div class="mini-label">Profit Factor</div>
+            <div class="mini-val">1.36</div>
+          </div>
+          <div class="mini">
+            <div class="mini-label">Avg Confluence</div>
+            <div class="mini-val">95%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-green">
+        <div class="label">Total Profit</div>
+        <div class="mid">$2.1K</div>
+        <div class="muted">1 winning trades</div>
+      </div>
+
+      <div class="card card-red">
+        <div class="label">Total Loss</div>
+        <div class="mid">$1.5K</div>
+        <div class="muted">2 losing trades</div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="badge">🏅</div>
+          <div>
+            <div class="label">Largest Win</div>
+            <div class="mid">$2,091.61</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="badge">🎯</div>
+          <div>
+            <div class="label">Largest Loss</div>
+            <div class="mid">$941.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="badge">🔥</div>
+          <div>
+            <div class="label">Best Streak</div>
+            <div class="mid">1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="badge">📈</div>
+          <div>
+            <div class="label">Total Trades</div>
+            <div class="mid">9</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="calendar-wrap">
+      <div class="calendar-head">
+        <div class="calendar-title">Trading Calendar</div>
+        <div class="calendar-actions">
+          <button class="btn ghost">Today</button>
+          <div class="month">January 2026</div>
+          <button class="btn ghost">◀</button>
+          <button class="btn ghost">▶</button>
+        </div>
+      </div>
+
+      <div class="calendar-grid">
+        <div class="dow">Sun</div><div class="dow">Mon</div><div class="dow">Tue</div>
+        <div class="dow">Wed</div><div class="dow">Thu</div><div class="dow">Fri</div><div class="dow">Sat</div>
+
+        <!-- Week 1 -->
+        <div class="day empty"></div>
+        <div class="day empty"></div>
+        <div class="day empty"></div>
+        <div class="day empty"></div>
+        <div class="day"><span class="num">1</span></div>
+        <div class="day"><span class="num">2</span></div>
+        <div class="day"><span class="num">3</span></div>
+
+        <!-- Week 2 -->
+        <div class="day"><span class="num">4</span></div>
+        <div class="day"><span class="num">5</span></div>
+        <div class="day"><span class="num">6</span></div>
+        <div class="day loss"><span class="num">7</span><span class="pnl">-$596</span></div>
+        <div class="day"><span class="num">8</span></div>
+        <div class="day"><span class="num">9</span></div>
+        <div class="day"><span class="num">10</span></div>
+
+        <!-- Week 3 -->
+        <div class="day"><span class="num">11</span></div>
+        <div class="day"><span class="num">12</span></div>
+        <div class="day win"><span class="num">13</span><span class="pnl">$0</span></div>
+        <div class="day"><span class="num">14</span></div>
+        <div class="day active"><span class="num">15</span></div>
+        <div class="day"><span class="num">16</span></div>
+        <div class="day"><span class="num">17</span></div>
+
+        <!-- Week 4 -->
+        <div class="day"><span class="num">18</span></div>
+        <div class="day"><span class="num">19</span></div>
+        <div class="day"><span class="num">20</span></div>
+        <div class="day"><span class="num">21</span></div>
+        <div class="day"><span class="num">22</span></div>
+        <div class="day"><span class="num">23</span></div>
+        <div class="day"><span class="num">24</span></div>
+
+        <!-- Week 5 -->
+        <div class="day"><span class="num">25</span></div>
+        <div class="day"><span class="num">26</span></div>
+        <div class="day"><span class="num">27</span></div>
+        <div class="day"><span class="num">28</span></div>
+        <div class="day"><span class="num">29</span></div>
+        <div class="day"><span class="num">30</span></div>
+        <div class="day"><span class="num">31</span></div>
+      </div>
+    </section>
+
+  </main>
 
 </body>
 </html>
-
