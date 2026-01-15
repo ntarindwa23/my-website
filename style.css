@@ -344,4 +344,92 @@ body{
   .mini-grid{ grid-template-columns: 1fr; }
   .card-green, .card-red{ grid-column: span 12; }
 }
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index: 50;
+}
+
+.modal.show{ display:block; }
+
+.modal-backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+}
+
+.modal-card{
+  position:relative;
+  width: min(560px, calc(100% - 28px));
+  margin: 70px auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.6);
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-head h2{
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.form label{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.form label span{
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-grid .full{ grid-column: 1 / -1; }
+
+input, select, textarea{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  padding: 10px 12px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(77,163,255,0.55);
+}
+
+textarea{ resize: vertical; }
+
+.form-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+@media (max-width: 520px){
+  .form-grid{ grid-template-columns: 1fr; }
+}
+
 
