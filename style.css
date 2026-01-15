@@ -116,6 +116,20 @@ body{
   background: rgba(255,95,122,0.10);
   color: var(--red);
 }
+.hero-actions{
+  margin-top: 16px;
+}
+
+/* Primary action button */
+.btn.primary{
+  border-color: rgba(31,209,161,0.45);
+  background: rgba(31,209,161,0.14);
+  color: var(--green);
+}
+
+.btn.primary:hover{
+  background: rgba(31,209,161,0.24);
+}
 
 .page{
   max-width: 1100px;
@@ -330,3 +344,4 @@ body{
   .mini-grid{ grid-template-columns: 1fr; }
   .card-green, .card-red{ grid-column: span 12; }
 }
+
