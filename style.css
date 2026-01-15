@@ -39,16 +39,14 @@ body{
   gap: 12px;
 }
 
-.logo{
+.brand-logo{
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  display:grid;
-  place-items:center;
-  background: rgba(31,209,161,0.12);
+  border-radius: 50%;
+  object-fit: cover;
   border: 1px solid rgba(31,209,161,0.35);
-  color: var(--green);
-  font-weight: 800;
+  background: rgba(31,209,161,0.10);
+
 }
 
 .brand-title{ font-weight: 800; letter-spacing: 0.3px; }
@@ -431,5 +429,6 @@ textarea{ resize: vertical; }
 @media (max-width: 520px){
   .form-grid{ grid-template-columns: 1fr; }
 }
+
 
 
