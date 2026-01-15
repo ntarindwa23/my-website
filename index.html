@@ -264,16 +264,83 @@
     if (e.key === 'Escape') closeModal();
   });
 
+<script>
+  const openBtn = document.getElementById('openTrade');
+  const modal = document.getElementById('tradeModal');
+  const closeBtn = document.getElementById('closeTrade');
+  const cancelBtn = document.getElementById('cancelTrade');
+  const backdrop = document.getElementById('closeBackdrop');
+  const form = document.getElementById('tradeForm');
+
+  // Inputs
+  const pairEl = document.getElementById('pair');
+  const directionEl = document.getElementById('direction');
+  const dateEl = document.getElementById('date');
+  const pnlEl = document.getElementById('pnl');
+  const notesEl = document.getElementById('notes');
+
+  const STORAGE_KEY = 'runtrades_trades';
+
+  function openModal() {
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  function loadTrades() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  }
+
+  function saveTrades(trades) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(trades));
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  cancelBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Saved (demo). Next step: store this trade in the browser or database.');
-    closeModal();
+
+    const trade = {
+      id: Date.now(),
+      pair: pairEl.value.toUpperCase(),
+      direction: directionEl.value,
+      date: dateEl.value,
+      pnl: Number(pnlEl.value),
+      notes: notesEl.value.trim()
+    };
+
+    if (!trade.pair || !trade.direction || !trade.date || isNaN(trade.pnl)) {
+      alert('Please fill all required fields correctly.');
+      return;
+    }
+
+    const trades = loadTrades();
+    trades.push(trade);
+    saveTrades(trades);
+
+    alert(`Trade saved ✅ (Total trades: ${trades.length})`);
+
     form.reset();
+    closeModal();
   });
+</script>
+
 </script>
 
 </body>
 </html>
+
 
 
 
